@@ -5,16 +5,16 @@
 
 # These are comments! Anything up to the end of line is ignored
 
-        .data     # An assembler **directive**. What follows is data 
-                  #  so it is stored in the data memory section (0x10000000)
+        .data   # An assembler **directive**. What follows is data 
+                #  so it is stored in the data memory section (0x10000000)
 
 matric: # Words ending with ':' are **labels**
         # The common convention is to write labels starting from the leftmost column.
         # Try to keep label names short
-        .word 30  # This directive reserves enough space for a word in memory
+        .word 5474  # This directive reserves enough space for a word in memory
                   #  and initializes it with the specific value.
 matricplus1:
-        .word 0   
+        .word 0
 
 var1:
         .word 1
@@ -55,7 +55,8 @@ prog:   # Labels in code are used for control flow: if/then/else, loops, etc.
         #  test.
         # Labels do not take up space in memory. They are only used by the assembler
 
-        lw         s0, 0(a0)        # Get value 100 into register s0. li - load immediate
+        lw         s0, 0(a0)
+        
         
         lw         s1, 0(a1)       # s1 gets the value of var1. a1 has the address of var1
         add        s1, s1,   s0    # s1 = var1 + s0
@@ -83,4 +84,6 @@ exit:
         ecall                     # we are outa here.
         
 ###############################################################################
+
+
 
